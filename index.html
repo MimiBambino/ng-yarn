@@ -6,37 +6,50 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <style>
     .yarn-img {
-        height: 200px;
+        width: 180px;
+        margin-top: 20px;
     }
     figcaption {
-        color: #444;
+        color: #fff;
         text-decoration: none;
+        background-color: rgba(51, 51, 51, 0.77);
     }
     figcaption:hover {
         color: #00aaaa;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    img {
+        border-radius: 20px;
+    }
+    body {
+        background-color: #eee;
+    }
+    .carousel-caption {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        right: 50%;
+        left: 10%;
+        bottom: 10%;
+        border-radius: 10px;
     }
     </style>
 </head>
 <body ng-controller="MainController">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 col-sm-4 col-xs-6 yarn-box" ng-repeat="yarn in yarns track by $index | limitTo:30">
-                <a href="{{yarn.link}}" target="_blank">
-                    <figure>
-                        <img class="yarn-img" ng-src="{{'yarn/'}}{{yarn.manufacturer | nospace }}{{yarn.line | nospace}}{{yarn.name | nospace}}{{'.jpg'}}">
-                        <figcaption>{{yarn.line + " in " + yarn.name}} <em>by: {{yarn.manufacturer}}</em></figcaption>
-                    </figure>
-                </a>
+            <div class="col-md-2 col-sm-4 col-xs-6 yarn-box" ng-repeat="yarn in yarns">
+                <yarn-image></yarn-image>
             </div>
         </div>
     </div>
 
-
-
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="js/mainController.js"></script>
-    <script type="text/javascript" src="js/yarns.js"></script>
 
 
 </body>

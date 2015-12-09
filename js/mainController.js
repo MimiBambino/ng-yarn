@@ -1,8 +1,15 @@
 app.controller('MainController', function($scope, $http){
-	$http.get('https://yarnsh.firebaseio.com/.json')
+	$http.get('data.json')
 		.then(function(response) {
 			$scope.yarns = response.data;
 	});
+});
+
+app.directive('yarnImage', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/yarns.html'
+	};
 });
 
 app.filter('nospace', function () {

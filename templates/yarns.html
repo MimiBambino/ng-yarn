@@ -1,0 +1,27 @@
+
+<figure>
+    <img class="yarn-img img-responsive" ng-src="{{yarn.image}}"></img>
+    <figcaption class="carousel-caption">{{yarn.price | currency}} <em data-toggle="modal" data-target="#myModal">More Info</em></figcaption>
+</figure>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{ yarn.line }} <em>by: {{ yarn.manufacturer }}</em></h4>
+      </div>
+      <div class="modal-body">
+      	<img ng-src="{{yarn.image}}"></img>
+        <p>{{yarn.fiber}}</p>
+        <p>{{yarn.weight}}</p>
+        <p>{{yarn.price | currency}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="{{ yarn.link }}" target="_blank"><button type="button" class="btn btn-primary">Visit {{ yarn.manufacturer }}</button></a>
+      </div>
+    </div>
+  </div>
+</div>
