@@ -1,11 +1,11 @@
-
+<div>
 <figure>
     <img class="yarn-img img-responsive" ng-src="{{yarn.image}}"></img>
-    <figcaption class="carousel-caption">{{yarn.price | currency}} <em data-toggle="modal" data-target="#myModal">More Info</em></figcaption>
+    <figcaption class="carousel-caption">{{yarn.price | currency}} <em data-toggle="modal" data-target="{{'#' + yarn.line | nospace}}">More Info</em></figcaption>
 </figure>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="{{yarn.line | nospace}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -24,4 +24,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
