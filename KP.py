@@ -14,7 +14,7 @@ for item in range(len(yarns)):
 	yarn = {}
 	yarn["manufacturer"] = "Knit Picks"
 	yarn["price"] = yarns[item]["costsmall_value_prices"]
-	yarn["link"] = yarns[item]["itemimglink_link"]
+	yarn["link"] = yarns[item]["titlesmall_link"]
 	yarn["image"] = yarns[item]["itemimglink_image"]
 	yarn["line"] = yarns[item]["itemimglink_image/_alt"]
 	yarn["fiber"] = yarns[item]["yarnweight_values"][0]
@@ -22,5 +22,9 @@ for item in range(len(yarns)):
 
 	yarn_list.append(yarn)
 
-with open('data.json', 'w') as outfile:
-    json.dump(yarn_list, outfile)
+if len(yarn_list) > 50:
+	with open('data.json', 'w') as outfile:
+   		json.dump(yarn_list, outfile)
+
+
+
